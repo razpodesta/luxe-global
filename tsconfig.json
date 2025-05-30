@@ -2,5 +2,99 @@
   "extends": "./tsconfig.base.json",
   "compileOnSave": false,
   "files": [],
-  "references": []
+  "references": [
+    {
+      "path": "./apps/luxe-global-directory-e2e"
+    },
+    {
+      "path": "./apps/luxe-global-directory"
+    },
+    {
+      "path": "./apps/luxe-agency-cl/main-e2e"
+    },
+    {
+      "path": "./apps/luxe-agency-cl/main"
+    },
+    {
+      "path": "./apps/luxe-global-directory-e2e"
+    },
+    {
+      "path": "./apps/cl-main-e2e"
+    },
+    {
+      "path": "./apps/cl-main"
+    },
+    {
+      "path": "./apps/ar-main-e2e"
+    },
+    {
+      "path": "./apps/ar-main"
+    },
+    {
+      "path": "./apps/es-main-e2e"
+    },
+    {
+      "path": "./apps/es-main"
+    },
+    {
+      "path": "./apps/portal-black-admin-e2e"
+    },
+    {
+      "path": "./apps/portal-black-admin"
+    },
+    {
+      "path": "./apps/api-principal"
+    },
+    {
+      "path": "./libs/shared/sh-ui"
+    },
+    {
+      "path": "./libs/shared/sh-types"
+    },
+    {
+      "path": "./libs/shared/sh-utils-frontend"
+    },
+    {
+      "path": "./libs/shared/sh-assets"
+    },
+    {
+      "path": "./libs/shared/sh-config-frontend"
+    },
+    {
+      "path": "./libs/core/co-domain"
+    },
+    {
+      "path": "./libs/core/co-application"
+    },
+    {
+      "path": "./libs/infrastructure/in-persistence"
+    },
+    {
+      "path": "./libs/infrastructure/in-utils-backend"
+    },
+    {
+      "path": "./libs/infrastructure/in-auth"
+    },
+    {
+      "path": "./libs/infrastructure/in-messaging"
+    },
+    {
+      "path": "./libs/infrastructure/in-payment"
+    },
+    {
+      "path": "./libs/infrastructure/in-email"
+    },
+    {
+      "path": "./libs/infrastructure/in-storage"
+    },
+    {
+      "path": "./libs/infrastructure/in-utils-backend"
+    },
+    {
+      "path": "./libs/infrastructure/in-ai-services"
+    },
+    {
+      "path": "./libs/infrastructure/in-whatsapp"
+    }
+  ]
 }

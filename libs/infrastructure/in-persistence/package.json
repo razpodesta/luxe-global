@@ -1,0 +1,24 @@
+{
+  "name": "@luxe-global/infrastructure/in-persistence",
+  "version": "0.0.1",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts",
+      "default": "./src/index.ts"
+    },
+    "./package.json": "./package.json"
+  },
+  "nx": {
+    "name": "in-persistence",
+    "tags": [
+      "scope:infrastructure",
+      "type:data-access-library",
+      "platform:node"
+    ]
+  },
+  "dependencies": {}
+}

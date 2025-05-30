@@ -1,0 +1,17 @@
+{
+  "name": "@luxe-global/luxe-global-directory",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "tags": [
+      "scope:global-directory",
+      "type:app",
+      "platform:web"
+    ]
+  },
+  "dependencies": {
+    "next": "~15.2.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}

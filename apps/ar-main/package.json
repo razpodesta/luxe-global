@@ -1,0 +1,19 @@
+{
+  "name": "@luxe-global/ar-main",
+  "version": "0.0.1",
+  "private": true,
+  "nx": {
+    "tags": [
+      "scope:agency-main",
+      "type:app",
+      "platform:web",
+      "country:ar",
+      "agency-id:luxe-ar"
+    ]
+  },
+  "dependencies": {
+    "next": "~15.2.4",
+    "react": "19.0.0",
+    "react-dom": "19.0.0"
+  }
+}

@@ -3,7 +3,19 @@
   "defaultBase": "master",
   "namedInputs": {
     "default": ["{projectRoot}/**/*", "sharedGlobals"],
-    "production": ["default"],
+    "production": [
+      "default",
+      "!{projectRoot}/cypress/**/*",
+      "!{projectRoot}/**/*.cy.[jt]s?(x)",
+      "!{projectRoot}/cypress.config.[jt]s",
+      "!{projectRoot}/.eslintrc.json",
+      "!{projectRoot}/eslint.config.mjs",
+      "!{projectRoot}/**/?(*.)+(spec|test).[jt]s?(x)?(.snap)",
+      "!{projectRoot}/tsconfig.spec.json",
+      "!{projectRoot}/jest.config.[jt]s",
+      "!{projectRoot}/src/test-setup.[jt]s",
+      "!{projectRoot}/test-setup.[jt]s"
+    ],
     "sharedGlobals": ["{workspaceRoot}/.github/workflows/ci.yml"]
   },
   "nxCloudId": "6839b6fbf0ad6d151a542dfe",
@@ -20,7 +32,120 @@
           "buildDepsName": "build-deps",
           "watchDepsName": "watch-deps"
         }
+      },
+      "exclude": [
+        "libs/shared/sh-types/*",
+        "libs/shared/sh-utils-frontend/*",
+        "libs/shared/sh-assets/*",
+        "libs/shared/sh-config-frontend/*",
+        "libs/core/co-domain/*",
+        "libs/core/co-application/*",
+        "libs/infrastructure/in-persistence/*",
+        "libs/infrastructure/in-utils-backend/*",
+        "libs/infrastructure/in-auth/*",
+        "libs/infrastructure/in-messaging/*",
+        "libs/infrastructure/in-payment/*",
+        "libs/infrastructure/in-email/*",
+        "libs/infrastructure/in-storage/*",
+        "libs/infrastructure/in-ai-services/*",
+        "libs/infrastructure/in-whatsapp/*"
+      ]
+    },
+    {
+      "plugin": "@nx/next/plugin",
+      "options": {
+        "startTargetName": "start",
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "serveStaticTargetName": "serve-static",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "e2e",
+        "openTargetName": "open-cypress",
+        "componentTestingTargetName": "component-test",
+        "ciTargetName": "e2e-ci"
+      }
+    },
+    {
+      "plugin": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "plugin": "@nx/jest/plugin",
+      "options": {
+        "targetName": "test"
+      }
+    },
+    {
+      "plugin": "@nx/webpack/plugin",
+      "options": {
+        "buildTargetName": "build",
+        "serveTargetName": "serve",
+        "previewTargetName": "preview",
+        "buildDepsTargetName": "build-deps",
+        "watchDepsTargetName": "watch-deps"
+      }
+    },
+    {
+      "plugin": "@nx/react/router-plugin",
+      "options": {
+        "buildTargetName": "build",
+        "devTargetName": "dev",
+        "startTargetName": "start",
+        "watchDepsTargetName": "watch-deps",
+        "buildDepsTargetName": "build-deps",
+        "typecheckTargetName": "typecheck"
+      }
+    },
+    {
+      "plugin": "@nx/js/typescript",
+      "include": [
+        "libs/shared/sh-types/*",
+        "libs/shared/sh-utils-frontend/*",
+        "libs/shared/sh-assets/*",
+        "libs/shared/sh-config-frontend/*",
+        "libs/core/co-domain/*",
+        "libs/core/co-application/*",
+        "libs/infrastructure/in-persistence/*",
+        "libs/infrastructure/in-utils-backend/*",
+        "libs/infrastructure/in-auth/*",
+        "libs/infrastructure/in-messaging/*",
+        "libs/infrastructure/in-payment/*",
+        "libs/infrastructure/in-email/*",
+        "libs/infrastructure/in-storage/*",
+        "libs/infrastructure/in-ai-services/*",
+        "libs/infrastructure/in-whatsapp/*"
+      ],
+      "options": {
+        "typecheck": {
+          "targetName": "typecheck"
+        }
       }
     }
-  ]
+  ],
+  "targetDefaults": {
+    "test": {
+      "dependsOn": ["^build"]
+    }
+  },
+  "generators": {
+    "@nx/next": {
+      "application": {
+        "style": "tailwind",
+        "linter": "eslint"
+      }
+    },
+    "@nx/react": {
+      "library": {
+        "unitTestRunner": "jest"
+      }
+    }
+  }
 }

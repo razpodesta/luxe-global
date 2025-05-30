@@ -1,2 +1,12 @@
-packages: 
-  - "packages/*"
+packages:
+  - 'packages/*'
+  - 'apps/*'
+  - 'apps/luxe-agency-cl/*'
+  - 'libs/shared/*'
+  - 'libs/core/*'
+  - 'libs/infrastructure/*'
+onlyBuiltDependencies:
+  - '@nestjs/core'
+  - '@parcel/watcher'
+  - 'esbuild'
+  - 'sharp'
